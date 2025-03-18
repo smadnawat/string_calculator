@@ -38,5 +38,11 @@ RSpec.describe StringCalculator do
         expect { StringCalculator.add("1,-2,-3,-4,5") }.to raise_error("negative numbers not allowed -2,-3,-4")
       end
     end
+
+    context "string contains only delimiter" do
+      it "returns 0" do
+        expect(StringCalculator.add(",")).to eq(0)
+      end
+    end
   end
 end
